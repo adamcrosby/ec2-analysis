@@ -41,3 +41,17 @@ Amazon JSON structure for pricing data is as follows:
 		
 ]}
 
+SQLite Table schema:
+CREATE TABLE pricehistory (
+	location INTEGER,
+	instanceType INTEGER,
+	spotPrice DECIMAL,
+	timestamp TEXT )
+	
+CREATE TABLE locations (
+	location INTEGER,
+	description TEXT)
+	
+CREATE TABLE instanceTypes (
+	instanceType INTEGER,
+	description TEXT)
