@@ -5,10 +5,10 @@ The .json files are extracted from the EC2 management website.
 
 ##Current Status##
 Currently, the EC2 analysis framework generates basic statistical information from Amazon's historical market pricing information.
-*  Minimum price
-*  Maximum price
-*  Mean (average) price
-*  Standard Deviation of price
+* Minimum price
+* Maximum price
+* Mean (average) price
+* Standard Deviation of price
 
 These prices and statistics are created per-market, with a single market being defined as a specific instance type (e.g. m1.small) in a specific geographic location (VA, CA, or Ireland).
 
