@@ -49,7 +49,7 @@ for jsondb in markethistory:
 	marketdata.append(data)
 
 marketinfo = [] # each item will be: {"name":"", "guid":"", "entries":"", "stddev":"", "mean":""}
-
+pricedata = []
 for market in marketdata:
 	prices = []
 
@@ -65,12 +65,13 @@ for market in marketdata:
 		"mean": math.fsum(prices)/len(prices)}
 	marketinfo.append(info)	
 
+print "Name\t\t Entries\tMin Price\tMax Price\tMean Price\tStdDev"
 for market in marketinfo:
 #	print "Market name: %s (%s entries)" % (market['name'], market['entries'])
 #	print "\tMin: %s\tMax: %s\tAvg: %s" % (market['minprice'], market['maxprice'], market['mean'])
 #	print "\tStd Deviation: %s" % (market['stddev'])
 #	print "-----------------------------------------"
-	print "\"%s\",%s,%s,%s,%s,%s" % (market['name'], market['entries'], market['minprice'], market['maxprice'], market['mean'], market['stddev'])
+	print "\"%s\"\t\t%s\t\t%s\t\t%s\t\t%s\t\t%s" % (market['name'], market['entries'], market['minprice'], market['maxprice'], market['mean'], market['stddev'])
 
 
 
