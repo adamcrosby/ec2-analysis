@@ -1,26 +1,21 @@
-&copy; 2010 Adam Crosby
-http://www.uptill3.com/
-
+#EC2 Analysis#
 This python script is for analyzing Amazon EC2 Spot Instance market historical data.
-
 The .json files are extracted from the EC2 management website.
 
-TODO:
-Generate query per 'time period', to see if certain periods of time are 'hotspots' (ie: noon in EST, vs. noon in PST)
+##Current Status##
+Currently, the EC2 analysis framework generates basic statistical information from Amazon's historical market pricing information.
+	* Minimum price
+	* Maximum price
+	* Mean (average) price
+	* Standard Deviation of price
 
-TODO:
-Hook into amazon ec2 api query (http://developer.amazonwebservices.com/connect/thread.jspa?threadID=45305):
-			Yes, you can do so using the DescribeSpotPriceHistory API ( http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSpotPriceHistory.html). 
+These prices and statistics are created per-market, with a single market being defined as a specific instance type (e.g. m1.small) in a specific geographic location (VA, CA, or Ireland).
 
-			You can also query this data using the EC2 API tools ( http://developer.amazonwebservices.com/connect/entry.jspa?categoryID=88&externalID=351).  
+##Next Steps##
+After loading all of the JSON historical data into a SQLite database, I intend to hook a python daemon up to Amazon's EC2 api, and begin continuously populating the pricing information.
+I also want to be able to do time-of-day queries and other specific statistical regressions on the data set.
 
-			For example, to pull recent prices for m1.small instances, you can do something like this: 
 
-			$ ec2-describe-spot-price-history -t m1.small -s 2010-04-17T22:00:00 
-			SPOTINSTANCEPRICE    0.058    2010-04-17T05:14:33-0800    m1.small    Windows 
-			SPOTINSTANCEPRICE    0.029    2010-04-17T19:35:50-0800    m1.small    Linux/UNIX
-			
-			
 ###Amazon JSON structure###
 
     {"requests":
