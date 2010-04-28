@@ -1,18 +1,20 @@
 #EC2 Analysis#
 This python script is for analyzing Amazon EC2 Spot Instance market historical data.
+
 The .json files are extracted from the EC2 management website.
 
 ##Current Status##
 Currently, the EC2 analysis framework generates basic statistical information from Amazon's historical market pricing information.
-	* Minimum price
-	* Maximum price
-	* Mean (average) price
-	* Standard Deviation of price
+*  Minimum price
+*  Maximum price
+*  Mean (average) price
+*  Standard Deviation of price
 
 These prices and statistics are created per-market, with a single market being defined as a specific instance type (e.g. m1.small) in a specific geographic location (VA, CA, or Ireland).
 
 ##Next Steps##
 After loading all of the JSON historical data into a SQLite database, I intend to hook a python daemon up to Amazon's EC2 api, and begin continuously populating the pricing information.
+
 I also want to be able to do time-of-day queries and other specific statistical regressions on the data set.
 
 
@@ -33,7 +35,8 @@ I also want to be able to do time-of-day queries and other specific statistical 
 			"spotPrice":0.031,
 			"timestamp":"2010-04-17T04:52:45.000Z",
 			"epochtime":1271479965000}
-	]}
+		]
+	}
 
 ###SQLite Table schema:###
 	CREATE TABLE pricehistory (
