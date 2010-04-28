@@ -1,4 +1,4 @@
-(C) 2010 Adam Crosby
+&copy; 2010 Adam Crosby
 http://www.uptill3.com/
 
 This python script is for analyzing Amazon EC2 Spot Instance market historical data.
@@ -21,30 +21,29 @@ Hook into amazon ec2 api query (http://developer.amazonwebservices.com/connect/t
 			SPOTINSTANCEPRICE    0.029    2010-04-17T19:35:50-0800    m1.small    Linux/UNIX
 			
 			
-Amazon JSON structure for pricing data is as follows:
+###Amazon JSON structure###
 
-{"requests":
-	{"describeSpotHistory":"36df7f6c-58f6-4079-816a-475b5a08080b"},
-	"priceChange":[
+    {"requests":
+		{"describeSpotHistory":"36df7f6c-58f6-4079-816a-475b5a08080b"},
+		"priceChange":[
 		
-		{"instanceType":"m1.small",
-			"productDescription":"Linux/UNIX",
-			"spotPrice":0.029,
-			"timestamp":"2010-04-17T06:11:24.000Z",
-			"epochtime":1271484684000},
+			{"instanceType":"m1.small",
+				"productDescription":"Linux/UNIX",
+				"spotPrice":0.029,
+				"timestamp":"2010-04-17T06:11:24.000Z",
+				"epochtime":1271484684000},
 		
-		{"instanceType":"m1.small"
-		,"productDescription":"Linux/UNIX",
-		"spotPrice":0.031,
-		"timestamp":"2010-04-17T04:52:45.000Z",
-		"epochtime":1271479965000}
-		
-]}
+			{"instanceType":"m1.small"
+			,"productDescription":"Linux/UNIX",
+			"spotPrice":0.031,
+			"timestamp":"2010-04-17T04:52:45.000Z",
+			"epochtime":1271479965000}
+	]}
 
-SQLite Table schema:
-CREATE TABLE pricehistory (
-	location TEXT,
-	instanceType TEXT,
-	spotPrice DECIMAL,
-	timestamp TEXT )
+###SQLite Table schema:###
+	CREATE TABLE pricehistory (
+		location TEXT,
+		instanceType TEXT,
+		spotPrice DECIMAL,
+		timestamp TEXT )
 	
