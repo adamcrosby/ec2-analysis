@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import json, math
+import json, math, sqlite
 
 guiddict = {
 	"b398aace-c81c-4442-bd71-1fe9baa57257": "CA m1.small",
@@ -75,22 +75,3 @@ for market in marketinfo:
 
 
 
-
-""""{"requests":
-	{"describeSpotHistory":"36df7f6c-58f6-4079-816a-475b5a08080b"},
-	"priceChange":[
-		
-		{"instanceType":"m1.small",
-			"productDescription":"Linux/UNIX",
-			"spotPrice":0.029,
-			"timestamp":"2010-04-17T06:11:24.000Z",
-			"epochtime":1271484684000},
-		
-		{"instanceType":"m1.small"
-		,"productDescription":"Linux/UNIX",
-		"spotPrice":0.031,
-		"timestamp":"2010-04-17T04:52:45.000Z",
-		"epochtime":1271479965000}
-		
-		]}
-"""		
