@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# (c) 2010 - Adam Crosby
 import json, math, sqlite3
 
 # SQLite setup
