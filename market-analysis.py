@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import json, math, sqlite
+import json, math, sqlite3
 
 guiddict = {
 	"b398aace-c81c-4442-bd71-1fe9baa57257": "CA m1.small",
